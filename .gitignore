@@ -1,0 +1,8 @@
+/node_modules
+npm-debug.log
+stats.json
+.idea
+.DS_STORE*
+app/static/uploads
+app/server/extracts.*
+server.bundle.min.js

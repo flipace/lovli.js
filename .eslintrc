@@ -1,0 +1,37 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "__DEV__"      : false,
+    "__PROD__"     : false,
+    "__DEBUG__"    : false,
+    "__DEBUG_NW__" : false
+  },
+  "rules": {
+    "strict": 0,
+    "no-irregular-whitespace": 0,
+    "new-cap": [2, {"newIsCap": false, "capIsNew": false}],
+    "comma-dangle": [1, "never"],
+    "key-spacing": [0, {
+      "beforeColon": true,
+      "afterColon": true
+    }],
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "no-else-return": 0,
+    "space-before-function-paren": [0, "always"],
+    "react/jsx-quotes": [0, "single"],
+    "react/prop-types": 0,
+    "react/no-multi-comp": [1, { "ignoreStateless": true }],
+    "react/sort-comp": [1, {
+      "order": [
+        "/^propTypes$/",
+        "/^defaultProps$/",
+        "/^getMeteorData$/",
+        "lifecycle",
+        "/^on.+$/",
+        "render",
+        "/^render.+$/",
+        "everything-else"
+      ]
+    }]
+  }
+}
