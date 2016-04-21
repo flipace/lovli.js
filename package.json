@@ -1,13 +1,13 @@
 {
-  "name": "react-webpack-modules-boilerplate",
-  "version": "1.0.0",
+  "name": "lovli.js",
+  "version": "0.0.2",
   "license": "MIT",
-  "description": "",
-  "repository": "",
+  "description": "A boilerplate for developing react+redux applications with rethinkdb/horizon as realtime database and express for the server.",
+  "repository": "https://github.com/flipace/lovli.js",
   "contributors": [
     {
       "name": "Patrick Neschkudla",
-      "email": "pn@ovos.at"
+      "email": "neschkudla@gmail.com"
     }
   ],
   "devDependencies": {
