@@ -1,9 +1,17 @@
-import { IndexRoute, Route } from 'react-router';
+import React from 'react';
+import { Router, Route, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
-import createApp from './components/App';
+import store from './store';
 
-export default React => (
-  <Route path="/">
-    <IndexRoute component={createApp} />
-  </Route>
+import App from './components/App';
+
+// Sync routing history with redux store
+const history = syncHistoryWithStore(browserHistory, store);
+
+// Route configuration
+export default (
+  <Router history={history}>
+    <Route path="/" component={App} />
+  </Router>
 );

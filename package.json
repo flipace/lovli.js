@@ -38,7 +38,7 @@
     "raw-loader": "^0.5.1",
     "react-addons-perf": "15.0.1",
     "react-transform-catch-errors": "1.0.2",
-    "react-hot-loader": "^3.0.0-alpha.9",
+    "react-hot-loader": "^3.0.0-alpha.12",
     "redbox-react": "1.2.3",
     "redux-devtools": "3.2.0",
     "shelljs": "^0.6.0",

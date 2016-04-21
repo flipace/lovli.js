@@ -2,11 +2,8 @@ const webpack = require('webpack');
 const defaultConfig = require('./webpack.config.client');
 const _ = require('lodash');
 const devProps = require('./devProps');
-const path = require('path');
 
-const basePath = path.join(__dirname, '../../');
-
-const config = module.exports = _.assign(_.clone(defaultConfig), {
+module.exports = _.assign(_.clone(defaultConfig), {
   devtool: 'eval',
   entry: _.assign(_.clone(defaultConfig.entry), {
     app: _.union(

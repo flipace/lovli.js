@@ -12,7 +12,7 @@ module.exports = {
   cache: true,
   entry: {
     app: [
-      path.join(basePath, '/client/app')
+      path.join(basePath, '/client/entry')
     ]
   },
   output: {
