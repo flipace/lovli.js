@@ -48,7 +48,10 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
+    "@horizon/client": "0.0.4-3",
+    "@horizon/server": "0.0.5-3",
     "express": "^4.13.4",
+    "hoist-non-react-statics": "^1.0.5",
     "immutable": "3.8.1",
     "lodash": "4.8.2",
     "react": "15.0.1",

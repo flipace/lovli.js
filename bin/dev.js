@@ -14,14 +14,7 @@ function webpackServerReady() {
 
   const app = require('../source/server/app.js').default;
 
-  app.listen(3000, (err) => {
-    if (err) {
-      console.log(err); // eslint-disable-line
-      return;
-    }
-
-    console.log(`Listening at http://localhost:3000`); // eslint-disable-line
-  });
+  app.run();
 }
 
 function compileClient() {

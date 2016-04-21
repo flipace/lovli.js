@@ -1,5 +1,6 @@
 import path from 'path';
 import express from 'express';
+import horizon from '@horizon/server';
 
 const app = express();
 
@@ -18,4 +19,27 @@ app.use('/', (req, res) => {
     </html>`);
 });
 
-export default app;
+const run = () => {
+  const httpServer = app.listen(3000, (err) => {
+    if (err) {
+      console.log(err); // eslint-disable-line
+      return;
+    }
+
+    console.log(`Listening at http://localhost:3000`); // eslint-disable-line
+  });
+
+  // if we want to start secure, add key and cert props
+  const horizonServer = horizon(httpServer, {
+    auto_create_table: true,
+    auto_create_index: true,
+    auth: {
+      allow_anonymous: true,
+      allow_unauthenticated: true
+    }
+  });
+};
+
+export default {
+  run
+};
