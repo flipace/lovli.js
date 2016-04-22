@@ -1,7 +1,7 @@
 import React from 'react';
 
 import subscribe from './lib/HorizonData';
-import createDoc from '../../utils/horizon/createDoc';
+import { createDoc, deleteDoc } from 'utils/horizon';
 
 const mapData = () => ({
   todos: { collection: 'todos', query: {} }
@@ -10,10 +10,21 @@ const mapData = () => ({
 const App = (props) => (
   <div>
     <h1>ToDo App Example - Again.</h1>
-    <p>I'm connected to Horizon!</p>
+    <p>I'm connected to Horizon! And I HOT RELOAD! Dope.</p>
     <ul>
       {props.todos.map(
-        todo => <li key={todo.id}>{todo.text}</li>
+        todo => (
+          <li key={todo.id}>
+            {todo.text}
+            <span
+              onClick={() => {
+                deleteDoc(props.horizon('todos'), { id: todo.id });
+              }}
+            >
+              (x)
+            </span>
+          </li>
+        )
       )}
     </ul>
     <button

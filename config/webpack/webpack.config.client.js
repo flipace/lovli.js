@@ -22,7 +22,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.css'],
-    root: basePath
+    root: basePath,
+    alias: {
+      utils: path.join(basePath, '/utils')
+    }
   },
   module: {
     loaders: [
