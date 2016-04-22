@@ -1,5 +1,3 @@
-[![npm version](https://badge.fury.io/js/lovli.js.svg)](https://badge.fury.io/js/lovli.js)
-[![GitHub issues](https://img.shields.io/github/issues/flipace/lovli.js.svg)](https://github.com/flipace/lovli.js/issues)
 # lovli.js
 A starter kit which allows you to develop realtime applications in minutes.
 

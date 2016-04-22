@@ -30,7 +30,7 @@ export default function subscribe(mapData) {
         if (!this.state.subscribed && this.context.horizon) {
           setTimeout(() => {
             this.subscribe();
-          }, 1000);
+          }, 0);
         }
       }
 
