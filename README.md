@@ -1,7 +1,14 @@
 # lovli.js
 A starter kit which allows you to develop realtime applications in minutes.
 
-Utilizing React, Redux, Horizon and webpack.
+### Stack
+
+- [facebook/react](https://github.com/facebook/react) - View
+- [reactjs/redux](https://github.com/reactjs/redux) - App State
+- [rethinkdb/horizon](https://github.com/rethinkdb/horizon) - Realtime Database Sync
+- [flipace/horizon-react](https://github.com/flipace/horizon-react) - Connect View + Data
+- [gaearon/react-hot-loader](https://github.com/gaearon/react-hot-loader) - Hot Reloading of React Components
+- [webpack/webpack](https://github.com/webpack/webpack) - Builds & Dev-Server
 
 ### Installation
 ```
@@ -10,10 +17,15 @@ cd lovli.js
 npm i
 ```
 
+You'll need to have RethinkDB running.
+
 ### Run
 ```
 npm start
 ```
+
+This will start a server listening on port ```3000```.
+This will of course be configurable in the future.
 
 ### Contributing
 

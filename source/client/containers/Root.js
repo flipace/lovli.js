@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import HorizonConnector from '../components/lib/HorizonConnector';
+import { Connector as HorizonConnector } from 'horizon-react';
 
 import routes from '../routes';
 import store from '../store';

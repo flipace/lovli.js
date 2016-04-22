@@ -1,6 +1,6 @@
 import React from 'react';
+import { subscribe } from 'horizon-react';
 
-import subscribe from './lib/HorizonData';
 import { createDoc, deleteDoc } from 'utils/horizon';
 
 const mapData = () => ({
