@@ -4,13 +4,13 @@ const _ = require('lodash');
 const devProps = require('./devProps');
 
 module.exports = _.assign(_.clone(defaultConfig), {
-  devtool: 'eval',
+  devtool: 'source-map',
   entry: _.assign(_.clone(defaultConfig.entry), {
     app: _.union(
       [
+        'react-hot-loader/patch',
         `webpack-dev-server/client?${devProps.baseUrl}`,
-        'webpack/hot/only-dev-server',
-        'react-hot-loader/patch'
+        'webpack/hot/only-dev-server'
       ],
       defaultConfig.entry.app
     )
