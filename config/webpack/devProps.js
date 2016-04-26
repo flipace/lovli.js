@@ -1,5 +1,5 @@
 const host = '127.0.0.1';
-const webpackPort = 9090;
+const webpackPort = 9095;
 
 module.exports = {
   host,

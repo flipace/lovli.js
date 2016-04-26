@@ -1,6 +1,7 @@
 import path from 'path';
 import express from 'express';
 import horizon from '@horizon/server';
+import devProps from '../../config/webpack/devProps';
 
 const app = express();
 
@@ -14,13 +15,13 @@ app.use('/', (req, res) => {
       </head>
       <body>
         <div id='root'></div>
-        <script src="http://127.0.0.1:9090/static/client.bundle.js"></script>
+        <script src="http://127.0.0.1:${devProps.webpackPort}/static/client.bundle.js"></script>
       </body>
     </html>`);
 });
 
 const run = () => {
-  const httpServer = app.listen(3000, (err) => {
+  const httpServer = app.listen(process.env.PORT || 3000, (err) => {
     if (err) {
       console.log(err); // eslint-disable-line
       return;

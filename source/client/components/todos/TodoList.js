@@ -3,7 +3,7 @@ import { subscribe } from 'horizon-react';
 import { deleteDoc } from 'horizon-react/lib/utils';
 
 // Simple subscription
-const mapDataObject = () => ({
+const mapDataFunction = () => ({
   todos: { collection: 'todos', query: {} }
 });
 
@@ -14,6 +14,13 @@ const mapDataArray = [
     name: 'todos'
   }
 ];
+
+// Advanced subscription with object
+const mapDataObject = {
+  todos: {
+    query: (hz, props) => hz('todos').limit(props.limit)
+  }
+};
 
 const TodoList = (props) => (
   <ul>

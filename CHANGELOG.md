@@ -1,5 +1,11 @@
 # Change Log
 
+### v0.2.1
+- allow env PORT to set port for express
+- changes webpack dev server port to 9095
+- updates horizon-react to 0.1.2
+- adds horizon-react mapDataObject example
+
 ### v0.2.0
 - moved utils/horizon to horizon-react
 - splitted TodoList and AddTodoButton into separate components
