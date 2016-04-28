@@ -1,5 +1,9 @@
 # Change Log
 
+### v0.2.2
+- explicitly setting token_secret for horizon server to make sure tokens are valid on server restart
+- update @horizon/client to 0.0.4-4
+
 ### v0.2.1
 - allow env PORT to set port for express
 - changes webpack dev server port to 9095

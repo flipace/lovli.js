@@ -36,7 +36,8 @@ const run = () => {
     auto_create_index: true,
     auth: {
       allow_anonymous: true,
-      allow_unauthenticated: true
+      allow_unauthenticated: true,
+      token_secret: 'thisislovlijs'
     }
   });
 };
