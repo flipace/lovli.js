@@ -14,10 +14,10 @@ A starter kit which allows you to develop realtime applications in minutes.
 - [webpack/webpack](https://github.com/webpack/webpack) - Builds & Dev-Server
 
 ### Installation
-```
-git clone git@github.com:flipace/lovli.js.git
-cd lovli.js
-npm i
+``` bash
+$ git clone git@github.com:flipace/lovli.js.git
+$ cd lovli.js
+$ npm i
 ```
 
 You'll need to have RethinkDB running.
