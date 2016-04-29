@@ -1,5 +1,8 @@
 # Change Log
 
+### v0.3.1
+- updated dependencies to their latest versions
+
 ### v0.3.0
 - added production configuration
   - run ```npm run prod``` to start the app in production mode

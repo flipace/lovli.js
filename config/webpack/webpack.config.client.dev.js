@@ -25,7 +25,7 @@ module.exports = _.assign(_.clone(defaultConfig), {
       {
         test: /\.jsx?$/,
         loader: 'babel',
-        include: /source\//
+        include: defaultConfig.module.loaders[0].include
       },
       {
         test : /\.json$/,
