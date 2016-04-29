@@ -1,19 +1,10 @@
-var webpack = require('webpack');
-var config = require('./webpack.config.client');
-var _ = require('lodash');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const config = require('./webpack.config.client');
+const _ = require('lodash');
 
-config.module.loaders[8] = {
-  test: /\.(css)$/,
-  loader: ExtractTextPlugin.extract('css-loader/locals?modules&importLoaders=1&localIdentName=[hash:base64:6]', 'postcss-loader'),
-  include: /app/,
-  exclude: /node_modules|vendor|\.global\.css/
-};
-
-var config = module.exports = _.assign(_.clone(config), {
+module.exports = _.assign(_.clone(config), {
   devtool: 'eval',
   plugins: (config.plugins || []).concat([
-    new ExtractTextPlugin('styles.css'),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
@@ -24,5 +15,5 @@ var config = module.exports = _.assign(_.clone(config), {
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(true)
-  ]),
+  ])
 });

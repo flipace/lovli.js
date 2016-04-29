@@ -8,21 +8,17 @@ const basePath = path.join(__dirname, '../../source');
 const buildPath = path.join(__dirname, '../../.build');
 
 module.exports = {
-  target: 'web',
+  target: 'node',
   context: __dirname,
   cache: true,
-  entry: {
-    app: [
-      path.join(basePath, '/client/entry')
-    ]
-  },
+  entry: path.join(basePath, '/server/entry.server'),
   output: {
     path: buildPath,
-    filename: 'client.bundle.js',
+    filename: 'server.bundle.js',
     publicPath: '/assets/'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css'],
+    extensions: ['', '.js', '.jsx'],
     root: basePath,
     alias: {
       utils: path.join(basePath, '/utils')
@@ -41,37 +37,30 @@ module.exports = {
       }
     ]
   },
-  postcss: function postcssPlugins() {
-    return [
-      require('autoprefixer'),
-      require('css-mqpacker'),
-      require('postcss-discard-comments')({
-        removeAll: true
-      })
-    ];
-  },
-  browser: {
-    child_process: 'empty',
-    net: 'empty',
-    tls: 'empty',
-    fs: 'empty'
-  },
   plugins: [
     new ProgressBarPlugin({
-      format: `${chalk.blue.bold('Building client bundle')} [:bar] ${chalk.green.bold(':percent')} (:elapsed seconds)`,
+      format: `${chalk.blue.bold('Building server bundle')} [:bar] ${chalk.green.bold(':percent')} (:elapsed seconds)`,
       renderThrottle: 100,
       summary: false,
       customSummary: (t) => {
-        return console.log(chalk.blue.bold(`Built client in ${t}.`));
+        return console.log(chalk.blue.bold(`Built server in ${t}.`));
       }
     }),
     new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
       BUILD_TIME: JSON.stringify((new Date()).getTime())
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new WebpackAnybarPlugin({
       port: 1738,
-      text: 'lovli.js - Client'
+      text: 'lovli.js - Server'
     })
+  ],
+  externals: [
+    {
+      winston: 'commonjs winston',
+      express: 'commonjs express',
+      '@horizon/server': 'commonjs @horizon/server'
+    }
   ]
 };

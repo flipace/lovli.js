@@ -6,7 +6,7 @@ import AddTodoButton from './todos/AddTodoButton';
 const App = () => (
   <div>
     <h1>ToDo App Example</h1>
-    <p>Connectedwef to Horizon.</p>
+    <p>Connected to Horizon.</p>
     <TodoList limit={5} />
     <AddTodoButton />
   </div>

@@ -23,12 +23,21 @@ npm i
 You'll need to have RethinkDB running.
 
 ### Run
-```
-npm start
+``` bash
+$ npm start # starts app in dev mode
+$ npm run prod # starts server in production mode
+$ npm run build # builds source files in .build/
+$ node .build/server.bundle.js # starts server (after you built with npm run build)
 ```
 
 This will start a server listening on port ```3000```.
-This will of course be configurable in the future.
+*You can change the port in* ```config/page.js``` *or by setting the ```PORT``` environment variable*.
+
+### Configure horizon
+If you want to configure the props for the horizon client, you can do that
+by passing a configuration object as the first parameter to ```HorizonConnector()``` in ```source/client/containers/Root.js``` and the target element as the second parameter.
+
+The props you provide there will be passed to ```horizon()```.
 
 ### Contributing
 
