@@ -70,8 +70,7 @@ module.exports = {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new WebpackAnybarPlugin({
-      port: 1738,
-      text: 'lovli.js - Client'
+      port: 1738
     })
   ]
 };
