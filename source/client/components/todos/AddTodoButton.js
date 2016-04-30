@@ -11,6 +11,7 @@ const AddTodoButton = (props) => {
   return (
     <div>
       <input
+        id="todo-text"
         className={styles.input}
         type="text"
         placeholder="A new todo item..."
@@ -18,7 +19,7 @@ const AddTodoButton = (props) => {
       />
       <div
         className={styles.button}
-        onClick={() => addTodo(prompt('Enter todo text:'))}
+        onClick={() => { addTodo(document.getElementById('todo-text').value); document.getElementById('todo-text').value = ''; }}
       >
       + Add todo
       </div>
