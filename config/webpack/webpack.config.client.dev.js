@@ -20,24 +20,6 @@ module.exports = _.assign(_.clone(defaultConfig), {
     pathinfo: true,
     crossOriginLoading: 'anonymous'
   }),
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel',
-        include: defaultConfig.module.loaders[0].include
-      },
-      {
-        test : /\.json$/,
-        loader : 'json'
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!postcss-loader',
-        include: /source\//
-      }
-    ]
-  },
   plugins: (defaultConfig.plugins || []).concat([
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),

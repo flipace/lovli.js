@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+  font-family: Montserrat, Arial, sans-serif;
+}
+
+a {
+  color: #961842;
+  text-decoration: none;
+  opacity: 0.7;
+
+  transition: all 250ms ease;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+.container {
+  width: 300px;
+  height: auto;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.tCenter {
+  text-align: center;
+}
+
+.footer {
+  composes: tCenter;
+
+  margin-top: 12px;
+  font-size: 0.6em;
+
+  i { color: #bd1282; }
+}
+
+.social {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

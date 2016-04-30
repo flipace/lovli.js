@@ -1,0 +1,9 @@
+.logo {
+  width: 150px;
+  height: 131px;
+
+  background-image: url(images/logo.png);
+  background-size: cover;
+
+  text-indent: -99999px;
+}

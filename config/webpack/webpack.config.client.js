@@ -6,6 +6,7 @@ const WebpackAnybarPlugin = require('webpack-anybar-plugin').default;
 
 const basePath = path.join(__dirname, '../../source');
 const buildPath = path.join(__dirname, '../../.build');
+const staticPath = path.join(__dirname, '../../static');
 
 module.exports = {
   target: 'web',
@@ -25,11 +26,18 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.css'],
     root: basePath,
     alias: {
-      utils: path.join(basePath, '/utils')
+      utils: path.join(basePath, '/utils'),
+      styles: path.join(basePath, '/client/styles'),
+      images: path.join(staticPath, 'images')
     }
   },
   module: {
     loaders: [
+      {
+        test: /\.(jpe?g|png|gif|mp3|ogg|wav|ogv|mov|mp4|svg)/,
+        loader: 'file-loader?limit=2000',
+        include: staticPath
+      },
       {
         test: /\.jsx?$/,
         loader: 'babel',
@@ -38,6 +46,11 @@ module.exports = {
       {
         test : /\.json$/,
         loader : 'json'
+      },
+      {
+        test: /\.(css)$/,
+        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=lovli_[local]___[hash:base64:5]!postcss-loader',
+        include: basePath
       }
     ]
   },
@@ -45,6 +58,7 @@ module.exports = {
     return [
       require('autoprefixer'),
       require('css-mqpacker'),
+      require('postcss-nested'),
       require('postcss-discard-comments')({
         removeAll: true
       })

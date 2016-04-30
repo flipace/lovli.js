@@ -1,44 +1,26 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
-import { deleteDoc } from 'horizon-react/lib/utils';
 
-// Simple subscription
+import TodoItem from './TodoItem';
+
+import styles from './styles';
+
 const mapDataFunction = () => ({
-  todos: { collection: 'todos', query: {} }
+  todos: { collection: 'todos' }
 });
 
-// Advanced subscription
-const mapDataArray = [
-  {
-    query: (hz, props) => hz('todos').limit(props.limit),
-    name: 'todos'
-  }
-];
-
-// Advanced subscription with object
-const mapDataObject = {
-  todos: {
-    query: (hz, props) => hz('todos').limit(props.limit)
-  }
-};
-
 const TodoList = (props) => (
-  <ul>
+  <ul className={styles.list} style={{ height: props.todos.length * 49 }}>
     {props.todos.map(
       todo => (
-        <li key={todo.id}>
-          {todo.text}
-          <span
-            onClick={() => {
-              deleteDoc(props.horizon('todos'), { id: todo.id });
-            }}
-          >
-            (x)
-          </span>
-        </li>
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          horizon={props.horizon}
+        />
       )
     )}
   </ul>
 );
 
-export default subscribe(mapDataObject)(TodoList);
+export default subscribe(mapDataFunction)(TodoList);

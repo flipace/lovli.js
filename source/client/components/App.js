@@ -1,14 +1,42 @@
 import React from 'react';
 
+import Logo from './Logo';
 import TodoList from './todos/TodoList';
 import AddTodoButton from './todos/AddTodoButton';
 
+import styles from 'styles/app';
+
 const App = () => (
   <div>
-    <h1>ToDo App Example</h1>
-    <p>Connected to Horizon.</p>
-    <TodoList limit={5} />
-    <AddTodoButton />
+    <div className={styles.container}>
+      <Logo />
+      <p className={styles.tCenter}>
+        <b>Welcome.</b>
+        <br />
+        You're connected to <a href="https://github.com/rethinkdb/horizon" target="_blank">horizon</a>.
+      </p>
+      <TodoList limit={100} />
+      <AddTodoButton />
+      <div className={styles.footer}>
+        built with <i className="fa fa-heart" /> by <a href="https://github.com/flipace" target="_blank">@flipace</a>
+      </div>
+    </div>
+    <div className={styles.social}>
+      <iframe
+        src="https://ghbtns.com/github-btn.html?user=flipace&repo=lovli.js&type=star&count=true"
+        frameBorder="0"
+        scrolling="0"
+        width="75px"
+        height="20px"
+      />
+      <iframe
+        src="https://ghbtns.com/github-btn.html?user=flipace&repo=lovli.js&type=fork&count=true"
+        frameBorder="0"
+        scrolling="0"
+        width="75px"
+        height="20px"
+      />
+    </div>
   </div>
 );
 

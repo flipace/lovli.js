@@ -17,6 +17,7 @@
     }],
     "indent": [2, 2, {"SwitchCase": 1}],
     "no-else-return": 0,
+    "import/no-unresolved": 0,
     "space-before-function-paren": [0, "always"],
     "react/jsx-quotes": [0, "single"],
     "react/prop-types": 0,

@@ -1,0 +1,92 @@
+.list {
+  composes: center from 'styles/app';
+
+  list-style: none;
+  padding: 0;
+
+  max-height: 300px;
+  overflow: auto;
+
+  transition: all 250ms ease;
+}
+
+.item {
+  display: block;
+
+  padding: 12px;
+  margin-bottom: 6px;
+
+  background-color: transparent;
+
+  background-color: #f2f2f2;
+
+  transition: all 250ms ease;
+
+  &:hover {
+    cursor: pointer;
+
+    margin-left: 4px;
+    background-color: #ebb428;
+
+    .caption {
+      color: #fff;
+    }
+
+    :global(.fa-remove) {
+      color: #e02513;
+    }
+  }
+
+  .actions {
+    display: block;
+    float: right;
+
+    i {
+      position: relative;
+
+      width: 20px;
+      height: 20px;
+
+      text-align: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.button {
+  composes: tCenter from 'styles/app';
+  display: block;
+  box-sizing: border-box;
+
+  width: 100%;
+  padding: 12px;
+
+  color: #fff;
+  background-color: #961842;
+
+  transition: all 250ms ease;
+
+  &:hover {
+    cursor: pointer;
+
+    background-color: #d03117;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+
+  outline: none;
+
+  border: 1px solid #f2f2f2;
+  transition: all 250ms ease;
+
+  &:focus, &:active {
+    border-color: #961842;
+  }
+}

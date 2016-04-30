@@ -1,8 +1,14 @@
 [![bitHound Overall Score](https://www.bithound.io/github/flipace/lovli.js/badges/score.svg)](https://www.bithound.io/github/flipace/lovli.js)
 [![bitHound Dependencies](https://www.bithound.io/github/flipace/lovli.js/badges/dependencies.svg)](https://www.bithound.io/github/flipace/lovli.js/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/flipace/lovli.js/badges/code.svg)](https://www.bithound.io/github/flipace/lovli.js)
+
+![lovli.js](static/images/logo-small.png)
 # lovli.js
 A starter kit which allows you to develop realtime applications in minutes.
+
+![lovli.js Preview](static/images/preview.gif)
+
+**Demo:** [lovli.neschkudla.at](http://lovli.neschkudla.at/)
 
 ### Stack
 

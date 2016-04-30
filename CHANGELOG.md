@@ -1,5 +1,12 @@
 # Change Log
 
+### v0.4.0
+- some readme additions
+- added logo and various styles for the example page
+- added ```postcss-nested, file-loader, later, rethinkdbdash```
+- automatically removing todos every 10 minutes
+- nicer todo entry by using input field instead of prompt
+
 ### v0.3.1
 - updated dependencies to their latest versions
 
