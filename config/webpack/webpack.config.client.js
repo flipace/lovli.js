@@ -20,7 +20,7 @@ module.exports = {
   output: {
     path: buildPath,
     filename: 'client.bundle.js',
-    publicPath: '/assets/'
+    publicPath: '/static/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.css'],

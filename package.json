@@ -72,8 +72,8 @@
     "winston": "^2.2.0"
   },
   "scripts": {
-    "start": "babel-node bin/dev.js",
-    "prod": "npm run build && node ./.build/server.bundle.js",
+    "start": "LATER_COV= babel-node bin/dev.js",
+    "prod": "LATER_COV= npm run build && node ./.build/server.bundle.js",
     "build": "webpack --config=config/webpack/webpack.config.client.prod.js && webpack --config=config/webpack/webpack.config.server.js"
   }
 }
