@@ -1,6 +1,6 @@
 {
   "name": "lovli.js",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
   "description": "A boilerplate for developing react+redux applications with rethinkdb/horizon as realtime database and express for the server.",
   "repository": "https://github.com/flipace/lovli.js",
@@ -50,7 +50,7 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
-    "@horizon/client": "0.0.4-4",
+    "@horizon/client": "0.1.0",
     "@horizon/server": "0.0.5-3",
     "express": "^4.13.4",
     "file-loader": "^0.8.5",

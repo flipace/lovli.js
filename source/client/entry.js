@@ -12,6 +12,9 @@ if (module.hot) {
   module.hot.accept();
 }
 
+// hack until this works without problems in horizon
+localStorage.removeItem('horizon-jwt');
+
 // Render application to target container
 ReactDOM.render(
   <AppContainer component={Root} />,

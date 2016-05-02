@@ -1,5 +1,12 @@
 # Change Log
 
+### v0.4.1
+- better TodoItem styles
+- automatically adding random todo ever 2 minutes
+- removing jwt token on every load (client)
+- added note about todo deletion
+- updated @horizon/client to 0.1.0
+
 ### v0.4.0
 - some readme additions
 - added logo and various styles for the example page

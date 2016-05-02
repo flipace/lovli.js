@@ -18,6 +18,8 @@ const App = () => (
       <TodoList limit={100} />
       <AddTodoButton />
       <div className={styles.footer}>
+        ToDos are deleted automatically every 10 minutes.
+        <br /><br />
         built with <i className="fa fa-heart" /> by <a href="https://github.com/flipace" target="_blank">@flipace</a>
       </div>
     </div>
