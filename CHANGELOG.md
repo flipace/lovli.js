@@ -1,5 +1,13 @@
 # Change Log
 
+### v0.5.0
+- added sourcemaps for css & using extract-text-webpack-plugin to extract css to styles.css
+- added font extensions to file-loader
+- added font-awesome in static/vendor folder to demonstrate adding vendor js/css
+- added possibility to add vendor css/js in static/vendor folder (import 'static/...')
+- fixed width of "github stars" iframe (2 digits!)
+- some README.md additions
+
 ### v0.4.1
 - better TodoItem styles
 - automatically adding random todo ever 2 minutes

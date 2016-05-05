@@ -11,12 +11,13 @@ const todos = [
   'Praise horizon.',
   'Build a shrine for horizon.',
   'Invest in shrimps.',
-  'Watch GoT S06E03.',
+  'Watch GoT Season 6.',
   'Go out with the kids.',
   'Buy a birthday present.',
   'Clean the house.',
   'Wash the dishes.',
-  'Connect horizon-react with redux.'
+  'Connect horizon-react with redux.',
+  'Eat some ice cream!'
 ];
 
 const createRandomTodo = () => {

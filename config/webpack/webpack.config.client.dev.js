@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const defaultConfig = require('./webpack.config.client');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const _ = require('lodash');
 const devProps = require('./devProps');
 
-module.exports = _.assign(_.clone(defaultConfig), {
+const devConfig = _.assign(_.clone(defaultConfig), {
   devtool: 'source-map',
   entry: _.assign(_.clone(defaultConfig.entry), {
     app: _.union(
@@ -21,6 +22,7 @@ module.exports = _.assign(_.clone(defaultConfig), {
     crossOriginLoading: 'anonymous'
   }),
   plugins: (defaultConfig.plugins || []).concat([
+    new ExtractTextPlugin('styles.css'),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
@@ -41,3 +43,15 @@ module.exports = _.assign(_.clone(defaultConfig), {
     }
   }
 });
+
+const localCssConfig = devConfig.module.loaders.find(
+  l => l.name && l.name === 'local-css-config'
+);
+
+delete localCssConfig.name;
+localCssConfig.loader = ExtractTextPlugin.extract(
+  'style',
+  'css?sourceMap&modules&importLoaders=1&localIdentName=lovli_[local]_[hash:base64:5]!postcss'
+);
+
+module.exports = devConfig;

@@ -28,14 +28,15 @@ module.exports = {
     alias: {
       utils: path.join(basePath, '/utils'),
       styles: path.join(basePath, '/client/styles'),
-      images: path.join(staticPath, 'images')
+      images: path.join(staticPath, 'images'),
+      static: path.join(staticPath)
     }
   },
   module: {
     loaders: [
       {
-        test: /\.(jpe?g|png|gif|mp3|ogg|wav|ogv|mov|mp4|svg)/,
-        loader: 'file-loader?limit=2000',
+        test: /\.(jpe?g|png|gif|mp3|ogg|wav|ogv|mov|mp4|svg|ttf|eot|woff)/,
+        loader: 'file?limit=2000',
         include: staticPath
       },
       {
@@ -44,12 +45,25 @@ module.exports = {
         include: basePath
       },
       {
+        test: /\.jsx?$/,
+        loader: 'script',
+        include: path.join(staticPath, 'vendor')
+      },
+      {
         test : /\.json$/,
         loader : 'json'
       },
       {
+        // vendor css can be put into the "static/vendor" folder, it won't be localized then
         test: /\.(css)$/,
-        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=lovli_[local]___[hash:base64:5]!postcss-loader',
+        loader: 'style!css',
+        include: path.join(staticPath, 'vendor')
+      },
+      {
+        name: 'local-css-config',
+        // css inside the source folder will be localized by default. see https://github.com/css-modules/css-modules
+        test: /\.(css)$/,
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[local]_[hash:base64:5]!postcss',
         include: basePath
       }
     ]

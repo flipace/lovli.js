@@ -13,16 +13,16 @@ app.use('/static', express.static(path.join(process.cwd(), '.build')));
 /**
  * @TODO move the html out of the server dir
  */
-const bundle = process.env.NODE_ENV === 'production'
-? '/static/client.bundle.js'
-: `http://127.0.0.1:${devProps.webpackPort}/static/client.bundle.js`;
+const host = process.env.NODE_ENV === 'production' ? '' : `http://127.0.0.1:${devProps.webpackPort}`;
+const bundle = `${host}/static/client.bundle.js`;
+const styles = `${host}/static/styles.css`;
 
 app.use('/', (req, res) => {
   res.status(200).send(`<!doctype html>
     <html>
       <head>
         <title>${config.title}</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="${styles}" />
       </head>
       <body>
         <div id='root'></div>

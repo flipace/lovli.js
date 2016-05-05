@@ -45,8 +45,22 @@ by passing a configuration object as the first parameter to ```HorizonConnector(
 
 The props you provide there will be passed to ```horizon()```.
 
-### Contributing
+### FAQ
 
+#### How to add vendor scripts and css?
+If you want to add any vendor javascript or css, you'll likely not want it to be processed by
+babel or localized by css loader.
+
+Add these scripts to the static/vendor folder and they will use a different loader configuration.
+
+#### How to configure data subscriptions?
+Check out [flipace/horizon-react](https://github.com/flipace/horizon-react) for documentation of the
+horizon-react ```subscribe``` function.
+
+#### Why won't the server reload?
+The server won't hot reload. It would be possible to implement a restart on file change though.
+
+### Contributing
 Pull Requests are very welcome!
 
 If you find any issues, please report them via [Github Issues](https://github.com/flipace/lovli.js/issues)!
