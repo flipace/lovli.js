@@ -17,7 +17,7 @@ localStorage.removeItem('horizon-jwt');
 
 // Render application to target container
 ReactDOM.render(
-  <AppContainer component={Root} />,
+  <AppContainer ><Root /></AppContainer>,
   rootElement
 );
 
