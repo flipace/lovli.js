@@ -1,5 +1,8 @@
 # Change Log
 
+### v0.6.0
+- updated to ```horizon-react@0.2.1```
+
 ### v0.5.0
 - added sourcemaps for css & using extract-text-webpack-plugin to extract css to styles.css
 - added font extensions to file-loader

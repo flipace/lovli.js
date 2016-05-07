@@ -5,9 +5,9 @@ import TodoItem from './TodoItem';
 
 import styles from './styles';
 
-const mapDataFunction = () => ({
-  todos: { collection: 'todos' }
-});
+const mapDataToProps = {
+  todos: (hz, props) => hz('todos').limit(props.limit)
+};
 
 const TodoList = (props) => (
   <ul className={styles.list} style={{ height: props.todos.length * 49 }}>
@@ -23,4 +23,6 @@ const TodoList = (props) => (
   </ul>
 );
 
-export default subscribe(mapDataFunction)(TodoList);
+export default subscribe({
+  mapDataToProps
+})(TodoList);
