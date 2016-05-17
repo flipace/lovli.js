@@ -1,5 +1,8 @@
 # Change Log
 
+### v0.7.1
+- stupid me forgot to bump horizon-react version
+
 ### v0.7.0
 - added import/exports loader until pr merged
 - updated to *horizon@1.0.1* #celebrate! https://horizon.io
