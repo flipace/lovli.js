@@ -15,6 +15,7 @@ const AddTodoButton = (props) => {
         className={styles.input}
         type="text"
         placeholder="A new todo item..."
+        autoFocus
         onKeyPress={function(e) { if (e.key === 'Enter') { addTodo(e.target.value); e.target.value = ''; } }}
       />
       <div

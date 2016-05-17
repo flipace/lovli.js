@@ -1,5 +1,8 @@
 # Change Log
 
+### v0.7.2
+- added autofocus for input field
+
 ### v0.7.1
 - stupid me forgot to bump horizon-react version
 
