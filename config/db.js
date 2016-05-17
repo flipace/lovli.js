@@ -1,5 +1,5 @@
 module.exports = {
-  db: 'horizon',
+  db: 'lovli',
   servers: [
     {
       host: '127.0.0.1',

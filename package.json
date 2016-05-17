@@ -39,7 +39,7 @@
     "progress-bar-webpack-plugin": "^1.6.0",
     "raw-loader": "^0.5.1",
     "react-addons-perf": "15.0.1",
-    "react-hot-loader": "^3.0.0-alpha.13",
+    "react-hot-loader": "^3.0.0-beta.2",
     "react-transform-catch-errors": "1.0.2",
     "redbox-react": "1.2.3",
     "redux-devtools": "3.2.0",
@@ -51,13 +51,15 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
-    "@horizon/client": "0.1.0",
-    "@horizon/server": "0.1.1-0",
+    "@horizon/client": "1.0.1",
+    "@horizon/server": "1.0.1",
+    "exports-loader": "^0.6.3",
     "express": "^4.13.4",
     "file-loader": "^0.8.5",
     "hoist-non-react-statics": "^1.0.5",
     "horizon-react": "0.2.1",
     "immutable": "3.8.1",
+    "imports-loader": "^0.6.5",
     "later": "^1.2.0",
     "lodash": "4.11.1",
     "normalize.css": "^4.1.1",
@@ -73,8 +75,8 @@
     "winston": "^2.2.0"
   },
   "scripts": {
-    "start": "LATER_COV= babel-node bin/dev.js",
-    "prod": "LATER_COV= npm run build && node ./.build/server.bundle.js",
+    "start": "babel-node bin/dev.js",
+    "prod": "npm run build && node ./.build/server.bundle.js",
     "build": "webpack --config=config/webpack/webpack.config.client.prod.js && webpack --config=config/webpack/webpack.config.server.js"
   }
 }

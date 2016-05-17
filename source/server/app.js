@@ -45,8 +45,10 @@ const run = () => {
 
   // @TODO make this configurable
   const horizonServer = horizon(httpServer, {
-    auto_create_table: true,
+    auto_create_collection: true,
     auto_create_index: true,
+    project_name: 'lovli',
+    permissions: false, // waiting for additions to permission system atm
     auth: {
       allow_anonymous: true,
       allow_unauthenticated: true,

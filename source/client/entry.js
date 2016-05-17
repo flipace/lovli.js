@@ -12,12 +12,9 @@ if (module.hot) {
   module.hot.accept();
 }
 
-// hack until this works without problems in horizon
-localStorage.removeItem('horizon-jwt');
-
 // Render application to target container
 ReactDOM.render(
-  <AppContainer ><Root /></AppContainer>,
+  <AppContainer><Root /></AppContainer>,
   rootElement
 );
 
@@ -26,8 +23,9 @@ ReactDOM.render(
 // https://github.com/gaearon/react-hot-loader/issues/249
 if (module.hot) {
   module.hot.accept('./containers/Root', () => {
+    const root = require('./containers/Root').default;
     ReactDOM.render(
-      <AppContainer component={require('./containers/Root').default} />,
+      <AppContainer><root /></AppContainer>,
       rootElement
     );
   });

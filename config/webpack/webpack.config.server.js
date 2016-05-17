@@ -59,6 +59,7 @@ module.exports = {
     {
       winston: 'commonjs winston',
       express: 'commonjs express',
+      later: 'commonjs later',
       '@horizon/server': 'commonjs @horizon/server'
     }
   ]
