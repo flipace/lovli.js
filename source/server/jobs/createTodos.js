@@ -1,7 +1,6 @@
 import later from 'later';
 import r from '../db';
 
-
 const todos = [
   'Bring out the trash.',
   'Clean up lovli.js',

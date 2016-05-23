@@ -1,5 +1,9 @@
 # Change Log
 
+### v0.7.3
+- temporarily add rxjs@5.0.0-beta.7 as a dependency for lovli.js until new @horizon/client version is out with fixed rxjs dependency
+- remove hoist-non-react-statics from deps
+
 ### v0.7.2
 - added autofocus for input field
 
