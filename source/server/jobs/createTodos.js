@@ -1,5 +1,5 @@
 import later from 'later';
-import r from '../db';
+import { r, r_internal } from '../db';
 
 const todos = [
   'Bring out the trash.',
@@ -21,7 +21,10 @@ const todos = [
 
 const createRandomTodo = () => {
   const rand = Math.round(Math.random() * todos.length - 1, 0);
-  r.table('todos').insert({ text: todos[rand] }).run();
+  r_internal.table('collections').get('todos').run()
+  .then(function(result) {
+    r.table(result.table).insert({ text: todos[rand] }).run();
+  });
 };
 
 const every2minutes = later.parse.text('every 2 minutes');

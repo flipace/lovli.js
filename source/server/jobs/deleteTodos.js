@@ -1,5 +1,5 @@
 import later from 'later';
-import r from '../db';
+import { r, r_internal } from '../db';
 
 /**
  * Delete all todos every 10 minutes.
@@ -8,7 +8,10 @@ import r from '../db';
 const every10minutes = later.parse.text('every 10 minutes');
 
 const deleteTodos = () => {
-  r.table('todos').delete().run();
+  r_internal.table('collections').get('todos').run()
+  .then(function(result) {
+    r.table(result.table).delete().run();
+  });
 };
 
 later.setInterval(deleteTodos, every10minutes);
