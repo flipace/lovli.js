@@ -1,5 +1,9 @@
 # Change Log
 
+### v0.7.6
+- fix $hz_v$ issue by faking field on server
+- set social icons to fixed position
+
 ### v0.7.5
 - fixes issue with HMR (#11)
 

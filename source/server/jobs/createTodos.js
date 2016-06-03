@@ -23,7 +23,7 @@ const createRandomTodo = () => {
   const rand = Math.round(Math.random() * todos.length - 1, 0);
   r_internal.table('collections').get('todos').run()
   .then(function(result) {
-    r.table(result.table).insert({ text: todos[rand] }).run();
+    r.table(result.table).insert({ text: todos[rand], $hz_v$: 1 }).run();
   });
 };
 
