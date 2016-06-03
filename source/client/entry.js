@@ -23,9 +23,9 @@ ReactDOM.render(
 // https://github.com/gaearon/react-hot-loader/issues/249
 if (module.hot) {
   module.hot.accept('./containers/Root', () => {
-    const root = require('./containers/Root').default;
+    const RootEle = require('./containers/Root').default; // eslint-disable-line
     ReactDOM.render(
-      <AppContainer><root /></AppContainer>,
+      <AppContainer><RootEle /></AppContainer>,
       rootElement
     );
   });

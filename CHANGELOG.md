@@ -1,5 +1,8 @@
 # Change Log
 
+### v0.7.5
+- fixes issue with HMR (#11)
+
 ### v0.7.4
 - updated to horizon client&server to 1.0.3
 - removed rxjs dep
