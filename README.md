@@ -21,7 +21,7 @@ A starter kit which allows you to develop realtime applications in minutes.
 
 ### Installation
 ``` bash
-$ git clone --depth=1 git@github.com:flipace/lovli.js.git
+$ git clone --depth=1 https://github.com/flipace/lovli.js
 $ cd lovli.js
 $ npm i
 ```
