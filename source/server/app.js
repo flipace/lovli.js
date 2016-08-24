@@ -3,6 +3,7 @@ import express from 'express';
 import horizon from '@horizon/server';
 import devProps from '../../config/webpack/devProps';
 import config from '../../config/page';
+import dbConfig from '../../config/db';
 
 import './jobs';
 
@@ -47,7 +48,7 @@ const run = () => {
   const horizonServer = horizon(httpServer, {
     auto_create_collection: true,
     auto_create_index: true,
-    project_name: 'lovli',
+    project_name: dbConfig.db,
     permissions: false, // waiting for additions to permission system atm
     auth: {
       allow_anonymous: true,

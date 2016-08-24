@@ -1,5 +1,10 @@
 # Change Log
 
+### v0.8.0
+- fixes bug which caused db name from db config not being used
+- updated horizon-react to 0.3.2
+- updated react-router from [2.4.0 to 2.7.0](https://github.com/reactjs/react-router/blob/master/CHANGES.md)
+
 ### v0.7.6
 - fix $hz_v$ issue by faking field on server
 - set social icons to fixed position
