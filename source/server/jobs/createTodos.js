@@ -1,5 +1,5 @@
 import later from 'later';
-import { r, r_internal } from '../db';
+import { r } from '../db';
 
 const todos = [
   'Bring out the trash.',
@@ -15,16 +15,12 @@ const todos = [
   'Buy a birthday present.',
   'Clean the house.',
   'Wash the dishes.',
-  'Connect horizon-react with redux.',
   'Eat some ice cream!'
 ];
 
 const createRandomTodo = () => {
   const rand = Math.round(Math.random() * todos.length - 1, 0);
-  r_internal.table('collections').get('todos').run()
-  .then(function(result) {
-    r.table(result.table).insert({ text: todos[rand], $hz_v$: 1 }).run();
-  });
+  r.table('todos').insert({ text: todos[rand], $hz_v$: 1 }).run();
 };
 
 const every2minutes = later.parse.text('every 2 minutes');

@@ -13,7 +13,6 @@ A starter kit which allows you to develop realtime applications in minutes.
 ### Stack
 
 - [facebook/react](https://github.com/facebook/react) - View
-- [reactjs/redux](https://github.com/reactjs/redux) - App State
 - [rethinkdb/horizon](https://github.com/rethinkdb/horizon) - Realtime Database Sync
 - [flipace/horizon-react](https://github.com/flipace/horizon-react) - Connect View + Data
 - [gaearon/react-hot-loader](https://github.com/gaearon/react-hot-loader) - Hot Reloading of React Components

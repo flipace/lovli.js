@@ -37,15 +37,13 @@ const run = () => {
 
   const httpServer = app.listen(port, (err) => {
     if (err) {
-      console.log(err); // eslint-disable-line
-      return;
+      throw err;
     }
 
-    console.log(`Express listening at http://localhost:${port}`); // eslint-disable-line
+    console.info(`Express listening at http://localhost:${port}`); // eslint-disable-line
   });
 
-  // @TODO make this configurable
-  const horizonServer = horizon(httpServer, {
+  horizon(httpServer, {
     auto_create_collection: true,
     auto_create_index: true,
     project_name: dbConfig.db,

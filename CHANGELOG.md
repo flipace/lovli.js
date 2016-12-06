@@ -1,5 +1,11 @@
 # Change Log
 
+### v0.9.0
+- remove redux dependencies
+- allow passing port via env PORT
+- update to horizon 2 and change automatic inserts/deletions accordingly (fixes #19)
+- 
+
 ### v0.8.0
 - fixes bug which caused db name from db config not being used
 - updated horizon-react to 0.3.2
