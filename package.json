@@ -62,6 +62,7 @@
     "postcss-nested": "^1.0.0",
     "react": "~15.3.2",
     "react-dom": "~15.3.2",
+    "react-redux": "^5.0.1",
     "react-router": "2.7.0",
     "rethinkdbdash": "^2.3.4",
     "winston": "^2.2.0"
